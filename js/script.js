@@ -8,6 +8,7 @@ const { createApp } = Vue
 const app = createApp({
     data() {
       return {
+        lastAccess: '',
         currentIndex: 0,
         user: {
           name: 'Nome Utente',
@@ -207,7 +208,26 @@ const app = createApp({
         ]
       }
     },
+    computed:{
+      // getLastAccess(targetIndex){
+      //   this.contacts[targetIndex]['messages'].forEach(message => {
+      //     if(message.status === 'received'){
+      //     return  this.lastAccess = message.date
+      //     } 
+      //   });
+      // }
+    },
     methods:{
+      getLastAccess: function(targetIndex){
+        this.contacts[targetIndex]['messages'].forEach(message => {
+          if(message.status === 'received'){
+            console.log(message.date)
+            this.lastAccess = message.date
+            console.log(this.lastAccess)
+            return  this.lastAccess
+          } 
+        });
+      },
       setCurrentChat(targetIndex){
         this.currentIndex = targetIndex
       }

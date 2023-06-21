@@ -30,9 +30,9 @@
                         <strong>Nome utente</strong>
                     </div>
                     <div class="d-flex">
-                        <i class="fa-solid fa-circle-notch"></i>
-                        <i class="fa-solid fa-message"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <i class="fa-solid fa-solid-mio fa-circle-notch"></i>
+                        <i class="fa-solid fa-solid-mio fa-message"></i>
+                        <i class="fa-solid fa-solid-mio fa-ellipsis-vertical"></i>
                     </div>
                </div>
                <!-- notification -->
@@ -68,32 +68,27 @@
             <div class="col-8 height d-flex flex-column p-0">
                 <!-- navbar main -->
                 <div class="up-nav d-flex justify-content-between">
-                    <div class="d-flex">
+                    <div class="d-flex flex-grow-1">
                         <img v-for="(contact , i) in contacts" class="avatar" v-show="currentIndex === i" :src="contact.avatar" alt="avatar user">
                         <ul class="ms-3 mt-2 list-unstyled">
                             <li v-for="(contact , i) in contacts" v-show="currentIndex === i"><strong>{{contact.name}}</strong></li>
-                            <li><p>Ultimo accesso alle:</p></li>
+                            <li><p >Ultimo accesso alle:{{getLastAccess(currentIndex)}}</span></p></li>
                         </ul>
                     </div>
                     <div class="d-flex">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <i class="fa-solid fa-paperclip"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <i class="fa-solid fa-solid-mio fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-solid-mio fa-paperclip"></i>
+                        <i class="fa-solid fa-solid-mio fa-ellipsis-vertical"></i>
                     </div>
                 </div>
                 <!-- chat -->
                 <div class="bg-img-chat d-flex overflow flex-grow-1">
                     <div class="container d-flex flex-column">
-                         <!-- user massage -->
-                        <div class="card user-main-chat">
+                        <!-- messages -->
+                        <div v-for="(message , i) in contacts[currentIndex]['messages']" :key="message.id" :class="message.status === 'received' ? 'card user-guest-chat' : 'card user-main-chat'">
                             <div class="card-body">
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            </div>
-                        </div>
-                        <!-- guest message -->
-                        <div class="card user-guest-chat">
-                            <div class="card-body">
-                                <p class="card-text"></p>
+                                <p class="card-text">{{message.message}}</p>
+                                <p class="text-end text-small">{{message.date}}<i class="fa-solid fa-check text-primary ms-2"></i></p>
                             </div>
                         </div>
                     </div>
@@ -101,13 +96,13 @@
                 <!-- user tools -->
                 <div class="tools d-flex justify-content-between">
                     <div class="ms-4">
-                        <i class="fa-solid fa-face-smile"></i>
+                        <i class="fa-solid fa-solid-mio fa-face-smile"></i>
                     </div>
                     <div class="flex-grow-1 mt-3">
                         <input type="text" class="form-control input-user" placeholder="Scrivi un messaggio">
                     </div>
                     <div class="ms-4">
-                        <i class="fa-solid fa-microphone"></i>
+                        <i class="fa-solid fa-solid-mio fa-microphone"></i>
                     </div>
                 </div>
             </div>

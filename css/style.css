@@ -55,7 +55,7 @@ img{
     margin: 10px;
 }
 
-.fa-solid{
+.fa-solid-mio{
     height: 40px;
     width: 40px;
     font-size: larger;
@@ -110,4 +110,20 @@ a{
 .active{
     font-size: larger;
     color: green;
+}
+
+.text-small{
+    font-size: xx-small;
+    right: 0%;
+    bottom: 0%;
+    position: absolute;
+    margin-right: 20px;
+}
+
+.position{
+    position: relative;
+}
+
+.fa-check{
+    
 }
