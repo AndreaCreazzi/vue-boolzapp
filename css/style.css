@@ -8,6 +8,10 @@ body{
     background-color: white;
 }
 
+.border-sidebar{
+    border-right: 2px solid #7a7aef;
+}
+
 img{
     max-width: 50px;
     border-radius: 50px;
@@ -23,8 +27,9 @@ img{
 }
 
 .fa-solid{
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
+    font-size: larger;
     margin-top: 1.5rem;
     color: #b1b1b1;
 }
