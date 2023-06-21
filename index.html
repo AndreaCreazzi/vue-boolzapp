@@ -22,7 +22,7 @@
         <div class="row h-100 d-flex justify-content-center align-items-center">
             <!-- sidebar -->
             <div class="col-4 height p-0 border-sidebar">
-                <!-- navbar -->
+                <!-- navbar sidebar -->
                <div class="up-nav d-flex justify-content-between">
                    <div>
                         <img class="avatar" src="img/avatar_io.jpg" alt="avatar user">
@@ -52,18 +52,30 @@
                   </div>
                </div>
             </div>
-            <div class="col-8 height p-0">
+            <!-- main -->
+            <div class="col-8 height d-flex flex-column p-0">
+                <!-- navbar main -->
                 <div class="up-nav d-flex justify-content-between">
-                    <div>
+                    <div class="d-flex">
                         <img class="avatar" src="img/avatar_1.jpg" alt="avatar user">
-                        <strong>Michele</strong>
-                        
+                        <ul class="ms-3 mt-2 list-unstyled">
+                            <li><strong>Michele</strong></li>
+                            <li><p>Ultimo accesso alle:</p></li>
+                        </ul>
                     </div>
                     <div class="d-flex">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <i class="fa-solid fa-paperclip"></i>
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
+                </div>
+                <!-- chat -->
+                <div class="bg-img-chat d-flex overflow flex-grow-1">
+                    <p></p>
+                </div>
+                <!-- user tools -->
+                <div class="tools d-flex justify-content-between">
+
                 </div>
             </div>
         </div>

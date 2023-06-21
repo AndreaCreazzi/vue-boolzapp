@@ -22,10 +22,26 @@ img{
     height: 70px;
 }
 
+.tools{
+    background-color: #eaeaea;
+    height: 70px;
+}
+
 .notification{
     background-color: #8edafc;
     height: 70px;
 }
+
+.bg-img-chat{
+    background-image: url(../img/mine.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.overflow{
+    overflow: auto;
+}
+
 
 .search{
     background-color: #eaeaea;
