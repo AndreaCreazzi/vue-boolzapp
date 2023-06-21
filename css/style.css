@@ -83,3 +83,8 @@ a{
     color: #5d8a9e;
     font-size: smaller;
 }
+
+.input-user{
+    border-radius: 0%;
+    height: 40px;
+}
