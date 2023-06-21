@@ -20,7 +20,9 @@
 <body>
     <main id="root" class="container h-100">
         <div class="row h-100 d-flex justify-content-center align-items-center">
+            <!-- sidebar -->
             <div class="col-4 height p-0 border-sidebar">
+                <!-- navbar -->
                <div class="up-nav d-flex justify-content-between">
                    <div>
                         <img class="avatar" src="img/avatar_io.jpg" alt="avatar user">
@@ -32,14 +34,22 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                </div>
+               <!-- notification -->
                <div class="notification d-flex justify-content-between">
                    <div class="d-flex">
-                    <i class="fa-regular fa-bell-slash"></i>
-                    <ul class="ms-3 mt-2 list-unstyled">
-                        <li>Ricevi notifiche di nuovi messaggi</li>
-                        <li><a href="#" class="">Attiva notifiche desktop</a></li>
-                    </ul>
+                        <i class="fa-regular fa-bell-slash"></i>
+                        <ul class="ms-3 mt-2 list-unstyled">
+                            <li>Ricevi notifiche di nuovi messaggi</li>
+                            <li><a href="#" class="">Attiva notifiche desktop</a></li>
+                        </ul>
                     </div>
+               </div>
+               <!-- search -->
+               <div class="search d-flex">
+                <div class="input-group px-3 py-1">
+                    <span class="input-group-text bg-white" id="basic-addon1"><i class="fa-brands fa-whatsapp"></i></span>
+                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                  </div>
                </div>
             </div>
             <div class="col-8 height p-0">

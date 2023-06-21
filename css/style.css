@@ -27,6 +27,15 @@ img{
     height: 70px;
 }
 
+.search{
+    background-color: #eaeaea;
+    height: 50px;
+}
+
+.bg-white{
+    background-color: white;
+}
+
 .avatar{
     margin: 10px;
 }
