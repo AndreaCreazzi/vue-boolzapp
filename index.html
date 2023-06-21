@@ -55,8 +55,9 @@
                <!-- user list -->
                <div class="overflow">
                 <ul class="mt-3 list-unstyled flex-grow-1">
-                    <li v-for="contact in contacts" class="mb-3 ms-3">
-                        <img :src="contact.avatar" alt="">
+                    <li v-for="(contact, i) in contacts" class="mb-3 ms-3" 
+                    :class="{active : currentIndex === i}" @click="setCurrentChat(i)">
+                        <img :src="contact.avatar" :alt="contact.name">
                         <strong class="ms-3">{{contact.name}}</strong>
                     </li>
                 </ul>
@@ -68,9 +69,9 @@
                 <!-- navbar main -->
                 <div class="up-nav d-flex justify-content-between">
                     <div class="d-flex">
-                        <img class="avatar" src="img/avatar_1.jpg" alt="avatar user">
+                        <img v-for="(contact , i) in contacts" class="avatar" v-show="currentIndex === i" :src="contact.avatar" alt="avatar user">
                         <ul class="ms-3 mt-2 list-unstyled">
-                            <li><strong>Michele</strong></li>
+                            <li v-for="(contact , i) in contacts" v-show="currentIndex === i"><strong>{{contact.name}}</strong></li>
                             <li><p>Ultimo accesso alle:</p></li>
                         </ul>
                     </div>
@@ -92,7 +93,7 @@
                         <!-- guest message -->
                         <div class="card user-guest-chat">
                             <div class="card-body">
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <p class="card-text"></p>
                             </div>
                         </div>
                     </div>

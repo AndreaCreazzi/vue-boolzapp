@@ -8,6 +8,7 @@ const { createApp } = Vue
 const app = createApp({
     data() {
       return {
+        currentIndex: 0,
         user: {
           name: 'Nome Utente',
           avatar: 'img/avatar_io.jpg'
@@ -204,6 +205,11 @@ const app = createApp({
             ],
           }
         ]
+      }
+    },
+    methods:{
+      setCurrentChat(targetIndex){
+        this.currentIndex = targetIndex
       }
     }
   })
