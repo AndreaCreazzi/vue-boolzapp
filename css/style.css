@@ -42,9 +42,8 @@ img{
     overflow: auto;
 }
 
-
 .search{
-    background-color: #eaeaea;
+    background-color: #fafafa;
     height: 50px;
 }
 
@@ -87,4 +86,8 @@ a{
 .input-user{
     border-radius: 0%;
     height: 40px;
+}
+
+.separator{
+    border: 1px solid #fdfdfd;
 }
