@@ -19,6 +19,7 @@
 </head>
 <body>
     <main id="root" class="container h-100">
+        <!-- container -->
         <div class="row h-100 d-flex justify-content-center align-items-center">
             <!-- sidebar -->
             <div class="col-4 height p-0 border-sidebar d-flex flex-column">
@@ -54,44 +55,9 @@
                <!-- user list -->
                <div class="overflow">
                 <ul class="mt-3 list-unstyled flex-grow-1">
-                    <li class="mb-2 ms-3">
-                        <img src="img/avatar_1.jpg" alt="">
-                        <strong class="ms-3">Michele</strong>
-                    </li>
-                    <div class="separator"></div>
-                    <li class="mt-2 mb-2 ms-3">
-                        <img src="img/avatar_2.jpg" alt="">
-                        <strong class="ms-3">Michele</strong>
-                    </li>
-                    <div class="separator"></div>
-                    <li class="mt-2 mb-2 ms-3">
-                        <img src="img/avatar_3.jpg" alt="">
-                        <strong class="ms-3">Michele</strong>
-                    </li>
-                    <div class="separator"></div>
-                    <li class="mt-2 mb-2 ms-3">
-                        <img src="img/avatar_4.jpg" alt="">
-                        <strong class="ms-3">Michele</strong>
-                    </li>
-                    <div class="separator"></div>
-                    <li class="mt-2 mb-2 ms-3">
-                        <img src="img/avatar_5.jpg" alt="">
-                        <strong class="ms-3">Michele</strong>
-                    </li>
-                    <div class="separator"></div>
-                    <li class="mt-2 mb-2 ms-3">
-                        <img src="img/avatar_6.jpg" alt="">
-                        <strong class="ms-3">Michele</strong>
-                    </li>
-                    <div class="separator"></div>
-                    <li class="mt-2 mb-2 ms-3">
-                        <img src="img/avatar_7.jpg" alt="">
-                        <strong class="ms-3">Michele</strong>
-                    </li>
-                    <div class="separator"></div>
-                    <li class="mt-2 mb-2 ms-3">
-                        <img src="img/avatar_8.jpg" alt="">
-                        <strong class="ms-3">Michele</strong>
+                    <li v-for="contact in contacts" class="mb-3 ms-3">
+                        <img :src="contact.avatar" alt="">
+                        <strong class="ms-3">{{contact.name}}</strong>
                     </li>
                 </ul>
                </div>
