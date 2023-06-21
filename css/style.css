@@ -2,3 +2,29 @@ body{
     background: linear-gradient(to top, #dadbd3 80% ,  #009688 20%);
     height: 100vh;
 }
+
+.height{
+    height: 90vh;
+    background-color: white;
+}
+
+img{
+    max-width: 50px;
+    border-radius: 50px;
+}
+
+.up-nav{
+    background-color: #eaeaea;
+    height: 70px;
+}
+
+.avatar{
+    margin: 10px;
+}
+
+.fa-solid{
+    height: 30px;
+    width: 30px;
+    margin-top: 1.5rem;
+    color: #b1b1b1;
+}
