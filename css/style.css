@@ -22,6 +22,11 @@ img{
     height: 70px;
 }
 
+.notification{
+    background-color: #8edafc;
+    height: 70px;
+}
+
 .avatar{
     margin: 10px;
 }
@@ -32,4 +37,24 @@ img{
     font-size: larger;
     margin-top: 1.5rem;
     color: #b1b1b1;
+}
+
+.fa-regular{
+    height: 40px;
+    width: 40px;
+    font-size: medium;
+    margin-top: 1rem;
+    color: #8edafc;
+    border-radius: 50%;
+    border: solid white;
+    margin-left: 1.5rem;
+    vertical-align: middle; 
+    text-align: center;
+    padding-top: 0.5rem;
+    background-color: white; 
+}
+
+a{
+    color: #5d8a9e;
+    font-size: smaller;
 }
