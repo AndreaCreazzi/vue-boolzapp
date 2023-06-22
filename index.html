@@ -89,7 +89,7 @@
                             <div class="card-body">
                                 <p class="card-text">{{message.message}}</p>
                                 <p class="text-end text-small">{{stringToDate(message.date)}}<i class="fa-solid fa-check text-primary ms-2"></i></p>
-                                <button type="button" class="btn-close x-close" @click="removeMessage(i)"></button>
+                                <button type="button" class="btn-close x-close" @click="removeMessage(currentIndex)"></button>
                             </div>
                         </div>
                     </div>
