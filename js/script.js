@@ -247,11 +247,13 @@ const app = createApp({
         }, 3000);
       }
     },
-    stringToDate(date) {
-      if (date.includes("/")) {
-        date = date.replaceAll("/", "-");
-        now = new Date(date);
-        return now.toLocaleTimeString();
+    stringToDate(stringDate) {
+      if (stringDate.includes("/")) {
+        stringDate = stringDate.replaceAll("/", "-");
+        dayjs.extend(window.dayjs_plugin_customParseFormat);
+        date = dayjs(stringDate, "MM/DD/YYYY HH:mm:ss");
+        formatDate = new Date(date);
+        return formatDate.toLocaleTimeString();
       } else {
         return new Date().toLocaleTimeString();
       }
