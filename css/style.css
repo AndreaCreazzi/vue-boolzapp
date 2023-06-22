@@ -124,3 +124,16 @@ a{
     position: relative;
 }
 
+.x-close{
+    font-size: 12px;
+    position: absolute;
+    right: 3%;
+    top: 25%;
+    visibility: visible;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.x-close:hover{
+    opacity: 1;
+}

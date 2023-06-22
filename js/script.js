@@ -233,6 +233,9 @@ const app = createApp({
     setCurrentChat(targetIndex) {
       this.currentIndex = targetIndex;
     },
+    removeMessage(targetIndex) {
+      this.contacts[targetIndex]["messages"].splice(targetIndex, 1);
+    },
     addNewMessage(targetIndex) {
       if (this.newMessage !== null && this.newMessage !== "") {
         const message = {
