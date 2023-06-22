@@ -69,9 +69,9 @@
                 <!-- navbar main -->
                 <div class="up-nav d-flex justify-content-between">
                     <div class="d-flex flex-grow-1">
-                        <img v-for="(contact , i) in contacts" class="avatar" v-show="currentIndex === i" :src="contact.avatar" alt="avatar user">
+                        <img v-for="(contact , i) in userFilter" class="avatar" v-show="currentIndex === i" :src="contact.avatar" alt="avatar user">
                         <ul class="ms-3 mt-2 list-unstyled">
-                            <li v-for="(contact , i) in contacts" v-show="currentIndex === i"><strong>{{contact.name}}</strong></li>
+                            <li v-for="(contact , i) in userFilter" v-show="currentIndex === i"><strong>{{contact.name}}</strong></li>
                             <li><p >Ultimo accesso alle: {{getLastAccess(currentIndex)}}</span></p></li>
                         </ul>
                     </div>

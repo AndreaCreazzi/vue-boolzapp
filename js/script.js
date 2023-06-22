@@ -208,7 +208,7 @@ const app = createApp({
           ],
         },
       ],
-      answers: ["Ok", "va benissimo", "tutto bene", "grande"],
+      answers: ["Ok", "Va benissimo", "Tutto bene", "Grande"],
     };
   },
   computed: {
