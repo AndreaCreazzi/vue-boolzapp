@@ -245,7 +245,7 @@ const app = createApp({
           message: this.newMessage,
           status: "sent",
         };
-        this.contacts[targetIndex]["messages"].push(message);
+        this.userFilter[targetIndex]["messages"].push(message);
         this.newMessage = "";
         setTimeout(() => {
           this.addNewResponse(this.currentIndex);
@@ -269,7 +269,7 @@ const app = createApp({
         message: this.getRandomAnswer(),
         status: "received",
       };
-      this.contacts[targetIndex]["messages"].push(message);
+      this.userFilter[targetIndex]["messages"].push(message);
       this.newMessage = "";
     },
     getRandomAnswer() {
