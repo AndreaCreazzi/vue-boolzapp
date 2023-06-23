@@ -269,17 +269,23 @@ const app = createApp({
       const randomAnswer = Math.floor(Math.random() * (max - min + 1)) + min;
       return this.answers[randomAnswer];
     },
-    showContact: function(contact) {
-      if (this.filterBy == '') {
-          return contact.visible = true;
+    showContact(contact) {
+      if (this.filterBy == "") {
+        return (contact.visible = true);
       } else {
-        return (contact.name.toLowerCase().includes(this.filterBy.toLowerCase()));
+        return contact.name.toLowerCase().includes(this.filterBy.toLowerCase());
       }
     },
     showLastMessage(index) {
-      let message = this.contacts[index].messages;
-      return message[message.length - 1].message
-    }
+      let messages = this.contacts[index].messages;
+
+      if (messages.length > 0) {
+        let lastMessage = messages[messages.length - 1];
+        return lastMessage.message;
+      } else {
+        return "Inizia nuova chat +";
+      }
+    },
   },
 });
 
