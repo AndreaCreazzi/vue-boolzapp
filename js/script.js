@@ -223,7 +223,7 @@ const app = createApp({
   },
   methods: {
     getLastAccess(targetIndex) {
-      this.contacts[targetIndex]["messages"].forEach((message) => {
+      this.userFilter[targetIndex]["messages"].forEach((message) => {
         if (message.status === "received") {
           this.lastAccess = message.date;
         }
@@ -234,7 +234,7 @@ const app = createApp({
       this.currentIndex = targetIndex;
     },
     removeMessage(targetIndex) {
-      this.contacts[targetIndex]["messages"] = this.contacts[targetIndex][
+      this.userFilter[targetIndex]["messages"] = this.contacts[targetIndex][
         "messages"
       ].splice(targetIndex, 1);
     },
