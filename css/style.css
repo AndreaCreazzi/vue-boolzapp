@@ -63,6 +63,11 @@ img{
     color: #b1b1b1;
 }
 
+.fa-solid-mio:hover {
+    cursor: pointer;
+    color: #3DB838;
+}
+
 .fa-regular{
     height: 40px;
     width: 40px;
@@ -107,9 +112,39 @@ a{
     margin-bottom: 20px;
 }
 
-.active{
-    font-size: larger;
-    color: green;
+.listaChat {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    min-height: 100%;
+}
+
+.userChat {
+    padding: 1.2em;
+    background-color: #fafafa;
+    border-bottom: 1px solid black;
+    display: flex;
+    position: relative;
+}
+
+.userChat:hover {
+    background-color: #eaeaea;
+    cursor: pointer;
+}
+
+.userChat .lastMessageChat {
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    font-size: 0.8em;
+    color: #b1b1b1;
+    font-weight: normal;
+    max-width: 160px;
+}
+
+.userChat.active{
+    color: #3DB838;
+    font-weight: bold;
+    background-color: #eaeaea;
 }
 
 .text-small{
@@ -124,6 +159,10 @@ a{
     position: relative;
 }
 
+.card-body:hover .x-close{
+    opacity: 1;
+}
+
 .x-close{
     font-size: 12px;
     position: absolute;
@@ -134,6 +173,9 @@ a{
     transition: opacity 0.3s;
 }
 
-.x-close:hover{
-    opacity: 1;
+.msgRequired {
+    position: absolute;
+    bottom: 78%;
+    left: 0;
+    width: 100%;
 }

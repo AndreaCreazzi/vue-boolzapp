@@ -12,6 +12,7 @@ const app = createApp({
       lastAccess: "",
       currentIndex: 0,
       newMessage: "",
+      textRequired: false,
       user: {
         name: "Nome Utente",
         avatar: "_io",
@@ -211,23 +212,9 @@ const app = createApp({
       answers: ["Ok", "Va benissimo", "Tutto bene", "Grande"],
     };
   },
-  computed: {
-    userFilter() {
-      if (this.filterBy) {
-        const filt = this.filterBy.toLowerCase();
-        return this.contacts.filter((contact) =>
-          contact.name.toLowerCase().includes(filt)
-        );
-      } else return this.contacts;
-    },
-
-    currentContact() {
-      return this.userFilter[this.currentIndex];
-    },
-  },
   methods: {
     getLastAccess() {
-      this.currentContact["messages"].forEach((message) => {
+      this.contacts[this.currentIndex]["messages"].forEach((message) => {
         if (message.status === "received") {
           this.lastAccess = message.date;
         }
@@ -239,7 +226,7 @@ const app = createApp({
     },
     removeMessage(messageIndex) {
       console.log(messageIndex);
-      this.currentContact["messages"].splice(messageIndex, 1);
+      this.contacts[this.currentIndex]["messages"].splice(messageIndex, 1);
     },
     addNewMessage() {
       if (this.newMessage) {
@@ -249,9 +236,11 @@ const app = createApp({
           message: this.newMessage,
           status: "sent",
         };
-        this.currentContact["messages"].push(message);
+        this.contacts[this.currentIndex]["messages"].push(message);
         this.newMessage = "";
         setTimeout(this.addNewResponse, 3000);
+      } else {
+        this.textRequired = !this.textRequired;
       }
     },
     stringToDate(stringDate) {
@@ -272,7 +261,7 @@ const app = createApp({
         message: this.getRandomAnswer(),
         status: "received",
       };
-      this.currentContact["messages"].push(message);
+      this.contacts[this.currentIndex]["messages"].push(message);
     },
     getRandomAnswer() {
       const min = 0;
@@ -280,6 +269,17 @@ const app = createApp({
       const randomAnswer = Math.floor(Math.random() * (max - min + 1)) + min;
       return this.answers[randomAnswer];
     },
+    showContact: function(contact) {
+      if (this.filterBy == '') {
+          return contact.visible = true;
+      } else {
+        return (contact.name.toLowerCase().includes(this.filterBy.toLowerCase()));
+      }
+    },
+    showLastMessage(index) {
+      let message = this.contacts[index].messages;
+      return message[message.length - 1].message
+    }
   },
 });
 
