@@ -213,17 +213,21 @@ const app = createApp({
   },
   computed: {
     userFilter() {
-      if (this.filterBy !== null && this.filterBy !== "") {
+      if (this.filterBy) {
         const filt = this.filterBy.toLowerCase();
         return this.contacts.filter((contact) =>
           contact.name.toLowerCase().includes(filt)
         );
       } else return this.contacts;
     },
+
+    currentContact() {
+      return this.userFilter[this.currentIndex];
+    },
   },
   methods: {
-    getLastAccess(targetIndex) {
-      this.userFilter[targetIndex]["messages"].forEach((message) => {
+    getLastAccess() {
+      this.currentContact["messages"].forEach((message) => {
         if (message.status === "received") {
           this.lastAccess = message.date;
         }
@@ -233,23 +237,23 @@ const app = createApp({
     setCurrentChat(targetIndex) {
       this.currentIndex = targetIndex;
     },
-    removeMessage(targetIndex) {
-      this.userFilter[targetIndex]["messages"] = this.contacts[targetIndex][
-        "messages"
-      ].splice(targetIndex, 1);
+    removeMessage(messageIndex) {
+      this.currentContact["messages"] = this.currentContact["messages"].splice(
+        messageIndex,
+        1
+      );
     },
-    addNewMessage(targetIndex) {
-      if (this.newMessage !== null && this.newMessage !== "") {
+    addNewMessage() {
+      if (this.newMessage) {
         const message = {
+          id: new Date().getTime(),
           date: new Date().toLocaleTimeString(),
           message: this.newMessage,
           status: "sent",
         };
-        this.userFilter[targetIndex]["messages"].push(message);
+        this.currentContact["messages"].push(message);
         this.newMessage = "";
-        setTimeout(() => {
-          this.addNewResponse(this.currentIndex);
-        }, 3000);
+        setTimeout(this.addNewResponse, 3000);
       }
     },
     stringToDate(stringDate) {
@@ -263,14 +267,14 @@ const app = createApp({
         return new Date().toLocaleTimeString();
       }
     },
-    addNewResponse(targetIndex) {
+    addNewResponse() {
       const message = {
+        id: new Date().getTime(),
         date: new Date().toLocaleTimeString(),
         message: this.getRandomAnswer(),
         status: "received",
       };
-      this.userFilter[targetIndex]["messages"].push(message);
-      this.newMessage = "";
+      this.currentContact["messages"].push(message);
     },
     getRandomAnswer() {
       const min = 0;

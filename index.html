@@ -69,9 +69,9 @@
                 <!-- navbar main -->
                 <div class="up-nav d-flex justify-content-between">
                     <div class="d-flex flex-grow-1">
-                        <img v-for="(contact , i) in userFilter" class="avatar" v-show="currentIndex === i" :src="`img/avatar${contact.avatar}.jpg`" alt="avatar user">
+                        <img class="avatar"  :src="`img/avatar${currentContact.avatar}.jpg`" alt="avatar user">
                         <ul class="ms-3 mt-2 list-unstyled">
-                            <li v-for="(contact , i) in userFilter" v-show="currentIndex === i"><strong>{{contact.name}}</strong></li>
+                            <li><strong>{{currentContact.name}}</strong></li>
                             <li><p >Ultimo accesso alle: {{getLastAccess(currentIndex)}}</span></p></li>
                         </ul>
                     </div>
@@ -85,11 +85,11 @@
                 <div class="bg-img-chat d-flex overflow flex-grow-1">
                     <div class="container d-flex flex-column">
                         <!-- messages -->
-                        <div v-for="(message , i) in userFilter[currentIndex]['messages']" :key="message.id" :class="message.status === 'received' ? 'card user-guest-chat' : 'card user-main-chat'">
+                        <div v-for="(message , i) in currentContact['messages']" :key="message.message" :class="message.status === 'received' ? 'card user-guest-chat' : 'card user-main-chat'">
                             <div class="card-body">
                                 <p class="card-text">{{message.message}}</p>
                                 <p class="text-end text-small">{{stringToDate(message.date)}}<i class="fa-solid fa-check text-primary ms-2"></i></p>
-                                <button type="button" class="btn-close x-close" @click="removeMessage(currentIndex)"></button>
+                                <button type="button" class="btn-close x-close" @click="removeMessage(i)"></button>
                             </div>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                         <i class="fa-solid fa-solid-mio fa-face-smile"></i>
                     </div>
                     <div class="flex-grow-1 mt-3">
-                        <input v-model.trim="newMessage" @keyup.enter="addNewMessage(currentIndex)" type="text" class="form-control input-user" placeholder="Scrivi un messaggio">
+                        <input v-model.trim="newMessage" @keyup.enter="addNewMessage" type="text" class="form-control input-user" placeholder="Scrivi un messaggio">
                     </div>
                     <div class="ms-4">
                         <i class="fa-solid fa-solid-mio fa-microphone"></i>
