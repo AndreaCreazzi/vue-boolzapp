@@ -238,10 +238,8 @@ const app = createApp({
       this.currentIndex = targetIndex;
     },
     removeMessage(messageIndex) {
-      this.currentContact["messages"] = this.currentContact["messages"].splice(
-        messageIndex,
-        1
-      );
+      console.log(messageIndex);
+      this.currentContact["messages"].splice(messageIndex, 1);
     },
     addNewMessage() {
       if (this.newMessage) {
