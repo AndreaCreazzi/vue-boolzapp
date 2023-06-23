@@ -85,7 +85,7 @@
                 <div class="bg-img-chat d-flex overflow flex-grow-1">
                     <div class="container d-flex flex-column">
                         <!-- messages -->
-                        <div v-for="(message , i) in contacts[currentIndex]['messages']" :key="message.id" :class="message.status === 'received' ? 'card user-guest-chat' : 'card user-main-chat'">
+                        <div v-for="(message , i) in userFilter[currentIndex]['messages']" :key="message.id" :class="message.status === 'received' ? 'card user-guest-chat' : 'card user-main-chat'">
                             <div class="card-body">
                                 <p class="card-text">{{message.message}}</p>
                                 <p class="text-end text-small">{{stringToDate(message.date)}}<i class="fa-solid fa-check text-primary ms-2"></i></p>
