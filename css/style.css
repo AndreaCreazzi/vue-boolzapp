@@ -137,3 +137,7 @@ a{
 .x-close:hover{
     opacity: 1;
 }
+
+.fa-solid-mio:hover{
+    color: green;
+}
